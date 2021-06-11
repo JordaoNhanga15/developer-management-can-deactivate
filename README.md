@@ -26,7 +26,7 @@ To do this with Angular Cli, just type something like this in a terminal:
 ng new your-app-name
 ```
 
-Then, inside the project directory, run dose commands to install PrimeNG:
+Then, inside the project directory, run those commands to install PrimeNG:
 
 ```shell
 npm install primeng --save
