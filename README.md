@@ -78,7 +78,7 @@ It is all you have to do to start using the PrimeNG widgets.
 *Note: Many of the PrimeNG widgets like Calendar or Table depends on BrowserAnimationsModule 
 from Angular.*
 
-## PrimeFlex ##
+### PrimeFlex ###
 
 PrimeFlex is a CSS utility library which the main purpose is to provide a 
 [flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox) 
