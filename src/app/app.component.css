@@ -1,0 +1,15 @@
+.width-adjust {
+  width: 80%;
+}
+
+@media only screen and (max-width: 576px) {
+  .width-adjust {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .width-adjust {
+    width: 90%;
+  }
+}

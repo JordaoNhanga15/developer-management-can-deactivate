@@ -106,6 +106,35 @@ Then add primeflex to the styles scripts section on the `angular.json` file of y
 ]
 ```
 
+### Editor ###
+
+To use the Editor `p-editor` the quill editor may be installed as it depends on it:
+
+```shell
+npm install quill
+```
+
+Then add the quill script and css files to `angular.json`:
+
+```json
+"scripts": [
+  "node_modules/quill/dist/quill.js"
+]
+```
+
+
+```json
+"styles": [
+  "node_modules/quill/dist/quill.core.css",
+  "node_modules/quill/dist/quill.snow.css",
+  "node_modules/primeicons/primeicons.css",
+  "node_modules/primeng/resources/themes/saga-blue/theme.css",
+  "node_modules/primeng/resources/primeng.min.css",
+  "src/styles.css"
+]
+```
+
+
 ## Copyright and license ##
 
 Code and documentation copyright 2021 Fabio M. Blanco. Code released under the
