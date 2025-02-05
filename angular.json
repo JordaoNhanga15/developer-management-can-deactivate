@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "9a62e58b-9cdb-4000-b2a7-b1fbddab4c5b"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -20,8 +23,9 @@
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
+              "src/assets",
               "src/favicon.ico",
-              "src/assets"
+              "src/public"
             ],
             "styles": [
               "node_modules/quill/dist/quill.core.css",

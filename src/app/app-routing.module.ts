@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-
-import {CalendarTestsComponent} from './components/calendar-tests/calendar-tests.component';
-import {HomeComponent} from './components/home/home.component';
-import {EditorTestsComponent} from './components/editor-tests/editor-tests.component';
+import { Routes, RouterModule } from '@angular/router';
+import { CanDeactivateGuard } from './components/can-deactivate.guard';
+import { SimpleComponent } from './components/simple/simple.component';
+import { FormularioComponent } from './components/form-angular/form-angular.component';
 
 const routes: Routes = [
-  {path: 'edit', component: EditorTestsComponent},
-  {path: 'calendar', component: CalendarTestsComponent},
-  {path: '', component: HomeComponent}
+  { path: "", redirectTo: "/formulario", pathMatch: "full" },
+  { path: "formulario", component: FormularioComponent, canDeactivate: [CanDeactivateGuard] },
+  { path: "simple", component: SimpleComponent }
 ];
 
 @NgModule({

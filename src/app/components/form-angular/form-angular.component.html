@@ -1,0 +1,94 @@
+<p-confirmDialog></p-confirmDialog>
+<div class="page-header">
+  <div class="left-area">
+    <span class="title">Desenvolvedores</span>
+    <span class="sub-title">Adicione, visualize e edite todos os desenvolvedores no sistema</span>
+  </div>
+</div>
+
+<form [formGroup]="form" (ngSubmit)="addDeveloper()">
+  <div class="form-group">
+    <label for="nome">Nome:</label>
+    <input id="nome" type="text" formControlName="nome" required>
+    <div *ngIf="form.get('nome').invalid && form.get('nome').touched" class="p-error">
+      Nome é obrigatório.
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="especialidade">Especialidade:</label>
+    <input id="especialidade" type="text" formControlName="especialidade" required>
+    <div *ngIf="form.get('especialidade').invalid && form.get('especialidade').touched" class="p-error">
+      Especialidade é obrigatória.
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="status">Status:</label>
+    <select id="status" formControlName="status" required>
+      <option value="Disponível">Disponível</option>
+      <option value="Ocupado">Ocupado</option>
+    </select>
+    <div *ngIf="form.get('status').invalid && form.get('status').touched" class="p-error">
+      Status é obrigatório.
+    </div>
+  </div>
+  <div class="p-field-group">
+    <button type="submit" class="primary-button" [disabled]="form.invalid">Adicionar Desenvolvedor</button>
+    <button type="button" class="ui-button-secondary" (click)="form.reset()">Cancelar</button>
+  </div>
+</form>
+
+<div class="list grid">
+  <ng-container *ngFor="let dev of desenvolvedores; trackBy: trackByIndex">
+    <div class="card col-6">
+      <!-- Header -->
+      <div class="header">
+        <div class="icon">
+          <img [src]="dev.foto" alt="Foto do Desenvolvedor" />
+        </div>
+        <div class="title">
+          <h2>{{ dev.nome }}</h2>
+          <div class="info">
+            <span><strong>{{ dev.especialidade }}</strong></span>
+            <span>•</span>
+            <span><span class="status" [ngClass]="{'Ocupado': dev.status === 'Ocupado'}">{{ dev.status }}</span></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tecnologias -->
+      <div class="tecnologias">
+        <strong>Tecnologias:</strong>
+        <span>{{ dev.tecnologias.join(', ') }}</span>
+      </div>
+
+      <!-- Projetos -->
+      <div class="projetos">
+        <div class="avatars">
+          <ng-container *ngFor="let projeto of dev.projetosParticipantes; trackBy: trackByIndex">
+            <img [src]="projeto.foto" alt="Projeto" />
+          </ng-container>
+          <div class="counter">
+            <span>+{{ dev.extraProjetos }}</span>
+          </div>
+          <span class="counter-desc">Projetos vinculados</span>
+        </div>
+      </div>
+
+      <!-- Informações de Contato -->
+      <div class="contact-info">
+        <div class="email">
+          <div class="icon">
+            <img src="public/icons/map-pin.svg" alt="Localização Icon" />
+          </div>
+          <span>{{ dev.localizacao }}</span>
+        </div>
+        <div class="email">
+          <div class="icon">
+            <img src="public/icons/globe-01.svg" alt="Portfolio Icon" />
+          </div>
+          <span>{{ dev.portfolio }}</span>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>

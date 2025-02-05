@@ -1,7 +1,7 @@
 <div class="width-adjust p-mx-auto height-100">
   <h1 class="p-text-center">{{title}}</h1>
-
-  <p-tabMenu [model]="menuItems"></p-tabMenu>
+  <nav>
+    <a [routerLink]="['/simple']">Outra Pagina</a>
+  </nav>
   <router-outlet></router-outlet>
 </div>
-
